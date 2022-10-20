@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link as RouterLink, useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Form, FormikProvider, useFormik } from "formik";
 import * as Yup from "yup";
 
@@ -9,7 +9,6 @@ import {
   FormControlLabel,
   IconButton,
   InputAdornment,
-  Link,
   Stack,
   TextField,
 } from "@mui/material";
@@ -30,8 +29,6 @@ const animate = {
 
 const LoginForm = ({ setAuth }) => {
   const navigate = useNavigate();
-  const location = useLocation();
-  const from = location.state?.from?.pathname || "/";
 
   const [showPassword, setShowPassword] = useState(false);
 
@@ -52,44 +49,38 @@ const LoginForm = ({ setAuth }) => {
     onSubmit: (data) => {
       console.log("submitting...", data);
       // login from local storage
-     
+
       let olddata = localStorage.getItem('registrations')
-      if(!olddata){
+
+      if (!olddata) {
         olddata = []
         localStorage.setItem("registrations", JSON.stringify(olddata))
       }
-    let oldArr = JSON.parse(olddata)
-    let success = false
-    oldArr.map(arr => 
-      {
-       
-          if (arr.email == data.email && (arr.password == data.password)) {
-           // simple timeout for login api call mimic
-           success = true
-            
-            
-          }else{
-            success =  false
-           
+
+      let oldArr  = JSON.parse(olddata)
+      let success = false
+
+      oldArr.forEach(arr => {
+          if (arr.email === data.email && (arr.password === data.password)) {
+            // simple timeout for login api call mimic
+            success = true
           }
         }
-
       )
 
-      if(success){
+      if (success) {
         setTimeout(() => {
-            setAuth(true);
-            navigate("/", { replace: true });
-    
-          }, 1000);
-      }else{
+          setAuth(true);
+          navigate("/", { replace: true });
+
+        }, 1000);
+      }else {
         alert("Please check your details or signup")
       }
-    
     },
   });
 
-  const { errors, touched, values, isSubmitting, handleSubmit, getFieldProps } =
+  const { errors, touched, values, handleSubmit, getFieldProps } =
     formik;
 
   return (
@@ -170,7 +161,7 @@ const LoginForm = ({ setAuth }) => {
                 label="Remember me"
               />
 
-             
+
             </Stack>
 
             <LoadingButton

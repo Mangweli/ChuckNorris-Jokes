@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Button, Typography, Container, Box } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
 import Logo from "../components/Logo";
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -13,13 +12,10 @@ import CardMedia from '@mui/material/CardMedia';
 //////////////////////////////////////
 
 const Home = ({ setAuth }) => {
-  const theme = useTheme();
   
   const [value, setValue] = React.useState(0);
   const [categories, setCategories] = React.useState([]);
   const [joke, setJoke] = React.useState({});
-
-
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
