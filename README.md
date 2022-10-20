@@ -1,7 +1,7 @@
 <h1 align="center">Welcome to Chuck Norris Jokes App 👋</h1>
 
 <p>This is a React based application that shows you different kind of jokes based on the categeries</p>
-<p>App link: [chucknorris-jokes](https://chuck-norris-jokes-vert.vercel.app) </p>
+<p>App link: [chucknorrisjokes](https://chuck-norris-jokes-vert.vercel.app) </p>
 
 ## DEPLOYING
 ### 🏠 [Requirements](Requirements)
@@ -27,21 +27,21 @@
     npm start
 ```    
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<p>Runs the app in the development mode.</p>
+<p>Open [http://localhost:3000](http://localhost:3000) to view it in your browser.</p>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<p>The page will reload when you make changes.</p>
+<p>You may also see any lint errors in the console.</p>
 
 ```sh
     npm run build
 ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p>Builds the app for production to the `build` folder.</p>
+<p>It correctly bundles React in production mode and optimizes the build for the best performance.</p>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<p>The build is minified and the filenames include the hashes.</p>
+<p>Your app is ready to be deployed!</p>
 
 
 ## Author
