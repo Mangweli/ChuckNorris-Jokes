@@ -68,20 +68,22 @@ const SignupForm = ({ setAuth }) => {
         let isExist = false;
 
         //check if user with same email already exists. The registration API will be the one checking for this
-        oldArr.forEach(arr => {
-            if (arr.email === data.email) {
-              isExist = true
-            }
+        for(const input of oldArr) {
+          if (input.email === data.email) {
+            isExist = true
+            break;
           }
-        )
+        }
 
         if(isExist) {
-          alert("Account already exists. Please Login with your correct details")
-        }else {
-          oldArr.push(data)
-          localStorage.setItem("registrations", JSON.stringify(oldArr))
-          console.log(oldArr, '>>>>registered')
+          alert("Account already exists. Please Counter check the details entered then try again");
+          return false
         }
+
+        oldArr.push(data)
+        localStorage.setItem("registrations", JSON.stringify(oldArr))
+        console.log(oldArr, '>>>>registered')
+        
       }
 
       setTimeout(() => {

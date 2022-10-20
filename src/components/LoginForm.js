@@ -60,23 +60,25 @@ const LoginForm = ({ setAuth }) => {
       let oldArr  = JSON.parse(olddata)
       let success = false
 
-      oldArr.forEach(arr => {
-          if (arr.email === data.email && (arr.password === data.password)) {
-            // simple timeout for login api call mimic
-            success = true
-          }
+      for(const input of oldArr) {
+        if (input.email === data.email && (input.password === data.password)) {
+          // simple timeout for login api call mimic
+          success = true
+          break;
         }
-      )
-
-      if (success) {
-        setTimeout(() => {
-          setAuth(true);
-          navigate("/", { replace: true });
-
-        }, 1000);
-      }else {
-        alert("Please check your details or signup")
       }
+
+      if(!success) {
+        alert("Please check your details or signup")
+        return false
+      }
+
+      setTimeout(() => {
+        setAuth(true);
+        navigate("/", { replace: true });
+
+      }, 1000);
+      
     },
   });
 
