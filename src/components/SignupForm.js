@@ -54,19 +54,35 @@ const SignupForm = ({ setAuth }) => {
     },
     validationSchema: SignupSchema,
     onSubmit: (data) => {
-        console.log("we have", data)
-        // add users registered locally
-        let olddata = localStorage.getItem('registrations');
-        if(olddata==null){
-          olddata = []
-          olddata.push(data)
-          localStorage.setItem('registrations', JSON.stringify(olddata));
-        }else{
-          let oldArr = JSON.parse(olddata)
+      console.log("we have", data)
+      // add users registered locally
+      let olddata = localStorage.getItem('registrations');
+
+      if (olddata == null) {
+        olddata = []
+        olddata.push(data)
+        localStorage.setItem('registrations', JSON.stringify(olddata));
+      }
+      else {
+        let oldArr = JSON.parse(olddata)
+        let isExist = false;
+
+        //check if user with same email already exists. The registration API will be the one checking for this
+        oldArr.forEach(arr => {
+            if (arr.email === data.email) {
+              isExist = true
+            }
+          }
+        )
+
+        if(isExist) {
+          alert("Account already exists. Please Login with your correct details")
+        }else {
           oldArr.push(data)
           localStorage.setItem("registrations", JSON.stringify(oldArr))
-          console.log(oldArr,'>>>>registered')
+          console.log(oldArr, '>>>>registered')
         }
+      }
 
       setTimeout(() => {
         setAuth(false);
