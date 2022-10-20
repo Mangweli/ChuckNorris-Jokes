@@ -1,20 +1,12 @@
 <h1 align="center">Welcome to Chuck Norris Jokes App 👋</h1>
-<p>
-  <img alt="Version" src="https://img.shields.io/badge/version-1-blue.svg?cacheSeconds=2592000" />
-  <a href="https://documenter.getpostman.com/view/1825277/UVsHUoN4" target="_blank">
-    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
-  </a>
-  <a href="https://twitter.com/Kmangwels" target="_blank">
-    <img alt="Twitter: Kmangwels" src="https://img.shields.io/twitter/follow/Kmangwels.svg?style=social" />
-  </a>
-</p>
 
 <p>This is a React based application that shows you different kind of jokes based on the categeries</p>
+<p>App link: [chucknorris-jokes](https://chuck-norris-jokes-vert.vercel.app) </p>
 
 ## DEPLOYING
 ### 🏠 [Requirements](Requirements)
 
-> v16.18.0
+> node v16.18.0
 
 ### ✨ [Clone](Clone the repo)
 
@@ -31,7 +23,9 @@
 
 ### ✨ [Running](Running the App)
 
-### `npm start`
+```sh
+    npm start
+```    
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
@@ -39,7 +33,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm run build`
+```sh
+    npm run build
+```
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
